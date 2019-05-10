@@ -176,6 +176,7 @@ header{
   margin: 0 10%;
   @include phone{
       margin: 0 4%;
+      padding: 1rem;
   }
   top: -200vh;
   text-align: center;
