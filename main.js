@@ -143,6 +143,7 @@ function count_down(method, user_gesture, computer_gesture){
     setTimeout(function(){
       outcome_element.innerHTML = "1";
       setTimeout(function(){
+        outcome_element.innerHTML = "1";
         outcome_element.classList.remove("count-down");
         setTimeout(function(){
           //enable gestures again
