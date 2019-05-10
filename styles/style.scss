@@ -180,6 +180,9 @@ header{
     font-size: 2.25rem;
     margin-bottom: 2rem;
   }
+  ul{
+    list-style-position: inside;
+  }
 
   animation-duration: 1s;
   animation-fill-mode: both;
