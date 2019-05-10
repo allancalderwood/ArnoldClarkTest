@@ -88,6 +88,12 @@ header{
   @include phone{
     font-size: 1rem;
   }
+  transition: font-size 0.25s;
+}
+
+//style for the count down
+.count-down{
+  font-size: 5rem !important;
 }
 
 //Style the Gestures
