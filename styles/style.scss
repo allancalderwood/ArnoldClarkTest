@@ -174,6 +174,9 @@ header{
   left: 0;
   right: 0;
   margin: 0 10%;
+  @include phone{
+      margin: 0 4%;
+  }
   top: -200vh;
   text-align: center;
   h1{
@@ -194,13 +197,13 @@ header{
     top: -200vh;
   }
   100%{
-    top: 20vh;
+    top: 10vh;
   }
 }
 
 @keyframes slide-out {
   0% {
-    top: 20vh;
+    top: 10vh;
   }
   100%{
     top: -200vh;
