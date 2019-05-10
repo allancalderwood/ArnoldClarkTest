@@ -145,6 +145,7 @@ function count_down(method, user_gesture, computer_gesture){
       setTimeout(function(){
         outcome_element.classList.remove("count-down");
         setTimeout(function(){
+          //enable gestures again
           gestures.style.display = "block";
           method(user_gesture, computer_gesture);
         },250)
