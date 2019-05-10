@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title and metadata -->
+  <title>Rock, Paper, Scissors, Lizard, Spock</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="./styles/style.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header bar -->
+  <header>
+    <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+  </header>
+
+  <!-- Scoreboard -->
+  <div id="score">
+    <div class="player">
+        <img src="img/players/user.png" alt="user">
+        <h2>User</h2>
+    </div>
+    <h1>
+      <span id="user-score">0</span>
+      :
+      <span id="computer-score">0</span>
+    </h1>
+    <div class="player">
+      <img src="img/players/computer.png" alt="computer">
+      <h2>Computer</h2>
+    </div>
+  </div>
+
+  <!-- Outcome -->
+  <div id="outcome">
+    <p>Click a gesture below to start.</p>
+  </div>
+
+  <!-- Gestures -->
+  <div id="gestures">
+    <div id="rock" class="gesture"> <img src="img/gestures/rock.png" alt="rock"> </div>
+    <div id="paper" class="gesture"> <img src="img/gestures/paper.png" alt="paper"> </div>
+    <div id="scissors" class="gesture"> <img src="img/gestures/scissors.png" alt="scissors"> </div>
+    <div id="lizard" class="gesture"> <img src="img/gestures/lizard.png" alt="lizard"> </div>
+    <div id="spock" class="gesture"> <img src="img/gestures/spock.png" alt="spock"> </div>
+  </div>
+
+  <div id="help-icon">
+    <i class="fas fa-question-circle fa-3x" alt="help icon" onclick="help_click()"></i>
+  </div>
+
+  <div id="help-menu">
+    <i class="fas fa-times fa-2x" onclick="help_click()"></i>
+    <h1>rules</h1>
+    <ul>
+      <li>Scissors cuts Paper</li>
+      <li>Paper covers Rock</li>
+      <li>Rock crushes Lizard</li>
+      <li>Lizard poisons Spock</li>
+      <li>Spock smashes Scissors</li>
+      <li>Scissors decapitates Lizard</li>
+      <li>Lizard eats Paper</li>
+      <li>Paper disproves Spock</li>
+      <li>Spock vaporizes Rock</li>
+      <li>Rock crushes Scissors</li>
+    </ul>
+  </div>
+
+<!-- Javascript file -->
+<script src="main.js"></script>
+</body>
+</html>
