@@ -174,7 +174,7 @@ header{
   left: 0;
   right: 0;
   margin: 0 10%;
-  top: -100%;
+  top: -200vh;
   text-align: center;
   h1{
     font-size: 2.25rem;
@@ -191,19 +191,19 @@ header{
 //animations for help menu
 @keyframes slide-in {
   0% {
-    top: -100%;
+    top: -200vh;
   }
   100%{
-    top: 20%;
+    top: 20vh;
   }
 }
 
 @keyframes slide-out {
   0% {
-    top: 20%;
+    top: 20vh;
   }
   100%{
-    top: -100%;
+    top: -200vh;
   }
 }
 
