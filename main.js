@@ -53,7 +53,7 @@ function play(user_gesture){
     case "lizardpaper":
     case "spockscissors":
     case "rockscissors":
-      user_win(user_gesture, computer_gesture);
+      count_down(user_win, user_gesture, computer_gesture);
       break;
     //losing cases
     case "scissorsrock":
@@ -66,7 +66,7 @@ function play(user_gesture){
     case "paperlizard":
     case "scissorsspock":
     case "scissorsrocks":
-      computer_win(user_gesture, computer_gesture);
+      count_down(computer_win, user_gesture, computer_gesture);
       break;
     //draw cases
     case "rockrock":
@@ -74,7 +74,7 @@ function play(user_gesture){
     case "scissorsscissors":
     case "lizardlizard":
     case "spockspock":
-      draw(user_gesture, computer_gesture);
+      count_down(draw, user_gesture, computer_gesture);
       break;
   }
 
@@ -106,7 +106,7 @@ function computer_win(user_gesture, computer_gesture){
 //function for a draw
 function draw(user_gesture, computer_gesture){
   outcome_element.innerHTML = "You both used "+computer_gesture+", Draw!";
-    gesture_color(user_gesture, "draw");
+  gesture_color(user_gesture, "draw");
 }
 
 //function for updating gesture background colour for 1 second
@@ -115,16 +115,42 @@ function gesture_color(user_gesture, color){
 
   setTimeout(function(){
     document.getElementById(user_gesture).classList.remove(color);
-  }, 500)
+  }, 1000)
 }
 
 function help_click(){
   menu_status=!menu_status; //change the menu status
   if(menu_status){
-      help_menu_element.classList.remove("slide-out");
-      help_menu_element.classList.add("slide-in");
+    help_menu_element.classList.remove("slide-out");
+    help_menu_element.classList.add("slide-in");
   }else{
     help_menu_element.classList.remove("slide-in");
     help_menu_element.classList.add("slide-out");
   }
+}
+
+//count down function, uses timeout as there is no sleeps and then executes method passed as a param
+function count_down(method, user_gesture, computer_gesture){
+  outcome_element.classList.add("count-down");
+  outcome_element.innerHTML = "3";
+
+  //disable gestures for count down
+  var gestures = document.getElementById("gestures");
+  gestures.style.display = "none";
+
+  setTimeout(function(){
+    outcome_element.innerHTML = "2";
+    setTimeout(function(){
+      outcome_element.innerHTML = "1";
+      setTimeout(function(){
+        outcome_element.innerHTML = "1";
+        outcome_element.classList.remove("count-down");
+        setTimeout(function(){
+          //enable gestures again
+          gestures.style.display = "block";
+          method(user_gesture, computer_gesture);
+        },250)
+      },500)
+    },1000)
+  },1000)
 }
